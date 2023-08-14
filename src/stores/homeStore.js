@@ -38,12 +38,12 @@ const homeStore = create((set) => ({
 
 				}));
 				//Set the state so coins array is updated and searched is set to true.
-				set({ coins, searched: true });
+				set({ coins, searched: true, searching: false });
 			} catch (err) {
 				//Handle errors during AP call.
 				console.error('Error during API call to retrieve:', err.message);
 				// Show an error message to the user.
-				set({ coins: [], searched: false, errMessage: 'An error occurred during the search. Please try again later.' });
+				set({ coins: [],searching: false, searched: false, errMessage: 'An error occurred during the search. Please try again later.' });
 			}
 		} else {
 			//When search box is empty or < 2 revert back to trending, and searched state is false.
