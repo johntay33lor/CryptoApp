@@ -47,7 +47,7 @@ const homeStore = create((set) => ({
 			}
 		} else {
 			//When search box is empty or < 2 revert back to trending, and searched state is false.
-			set({ coins: trending, searched: false });
+			set({ coins: trending, searched: false, searching: false });
 		}
 	}, 500),
 
